@@ -1,4 +1,5 @@
 var gulp = require('gulp');
+var util = require('gulp-util');
 var less = require('gulp-less');
 var browserSync = require('browser-sync').create();
 var header = require('gulp-header');
@@ -19,16 +20,23 @@ var banner = ['/*!\n',
 
 // Compile LESS files from /less into /css
 gulp.task('less', function() {
-    var f = filter(['*', '!mixins.less', '!variables.less']);
+    var f = filter(['*','!mixins.less', '!variables.less']);
     return gulp.src('less/*.less')
         .pipe(f)
-        .pipe(less())
-        .pipe(header(banner, { pkg: pkg }))
-        .pipe(gulp.dest('css'))
-        .pipe(browserSync.reload({
-            stream: true
-        }))
+        .pipe(less().on('error', util.log))
+        .pipe(gulp.dest('css/'))
 });
+
+// Update the variables as well
+// gulp.task('variables', function() {
+//   return gulp.src('less/freelancer.less')
+//       .pipe(less())
+//       .pipe(header(banner, { pkg: pkg }))
+//       .pipe(gulp.dest('css'))
+//       .pipe(browserSync.reload({
+//           stream: true
+//       }))
+// });
 
 // Minify compiled CSS
 gulp.task('minify-css', ['less'], function() {

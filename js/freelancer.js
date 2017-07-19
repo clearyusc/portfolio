@@ -1,4 +1,3 @@
-// Freelancer Theme JavaScript
 
 (function($) {
     "use strict"; // Start of use strict
@@ -19,7 +18,7 @@
     });
 
     // Closes the Responsive Menu on Menu Item Click
-    $('.navbar-collapse ul li a').click(function(){ 
+    $('.navbar-collapse ul li a').click(function(){
             $('.navbar-toggle:visible').click();
     });
 
@@ -29,6 +28,13 @@
             top: 100
         }
     })
+
+    // Populate the portfolio items from the JSON file
+    $(function() {
+        $.getJSON("portfolio.json", function(json) {
+            console.log(json); // this will show the info it in firebug console
+          });
+    });
 
     // Floating label headings for the contact form
     $(function() {

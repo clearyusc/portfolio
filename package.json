@@ -1,13 +1,9 @@
 {
-  "name": "freelancer",
-  "title": "Freelancer",
-  "version": "3.3.7+1",
-  "homepage": "http://startbootstrap.com/template-overviews/freelancer",
-  "author": "Start Bootstrap",
-  "license": {
-    "type": "MIT",
-    "url": "https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE"
-  },
+  "name": "portfolio",
+  "title": "RyanCleary.co",
+  "version": "1.0.0",
+  "author": "Start Bootstrap -> clearyusc",
+  "license": {},
   "devDependencies": {
     "bootstrap": "^3.3.7",
     "browser-sync": "^2.13.0",
@@ -23,6 +19,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/BlackrockDigital/startbootstrap-freelancer.git"
+    "url": "https://github.com/clearyusc/portfolio.git"
+  },
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-util": "^3.0.8"
   }
 }
